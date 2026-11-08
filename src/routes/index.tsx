@@ -57,7 +57,7 @@ function Home() {
             fetchPriority="high"
             className="h-full w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/0 md:via-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40 md:via-background/60 md:to-background/0" />
         </div>
         <div className="container-page relative flex min-h-[78svh] items-center py-24 md:min-h-[86svh]">
           <div className="max-w-xl fade-up">
