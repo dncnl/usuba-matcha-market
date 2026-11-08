@@ -45,7 +45,7 @@ export function CartDrawer() {
             <ShoppingBag className="h-10 w-10 text-muted-foreground" strokeWidth={1.25} />
             <p className="text-muted-foreground">Nothing here yet.</p>
             <Button asChild variant="outline" onClick={() => setOpen(false)}>
-              <Link to="/shop" search={{ collection: undefined }}>Browse the shop</Link>
+              <Link to="/shop" search={{}}>Browse the shop</Link>
             </Button>
           </div>
         ) : (

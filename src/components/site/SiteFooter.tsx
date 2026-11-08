@@ -23,7 +23,7 @@ export function SiteFooter() {
         <nav aria-label="Shop" className="md:col-span-2 md:col-start-8">
           <p className="eyebrow">Shop</p>
           <ul className="mt-5 space-y-3 text-sm">
-            <li><Link to="/shop" search={{ collection: undefined }} className="hover:text-primary">All products</Link></li>
+            <li><Link to="/shop" search={{}} className="hover:text-primary">All products</Link></li>
             <li><Link to="/shop" search={{ collection: "Matcha" }} className="hover:text-primary">Matcha</Link></li>
             <li><Link to="/shop" search={{ collection: "Teaware" }} className="hover:text-primary">Teaware</Link></li>
             <li><Link to="/shop" search={{ collection: "Kits" }} className="hover:text-primary">Kits</Link></li>

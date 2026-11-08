@@ -72,7 +72,7 @@ function Home() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <Button asChild size="lg">
-                <Link to="/shop" search={{ collection: undefined }}>
+                <Link to="/shop" search={{}}>
                   Shop matcha <ArrowRight />
                 </Link>
               </Button>
@@ -94,7 +94,7 @@ function Home() {
             </h2>
           </div>
           <Button asChild variant="quiet">
-            <Link to="/shop" search={{ collection: undefined }}>View all products</Link>
+            <Link to="/shop" search={{}}>View all products</Link>
           </Button>
         </div>
         <div className="mt-14">

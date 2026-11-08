@@ -13,7 +13,7 @@ const COPY: Record<Collection | "All", string> = {
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): { collection?: Collection } => {
-    const c = search.collection;
+    const c = search["collection"];
     return typeof c === "string" && (COLLECTIONS as readonly string[]).includes(c)
       ? { collection: c as Collection }
       : {};
