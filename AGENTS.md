@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Products, prices and variants live in Shopify only; the storefront reads them via the Storefront API (`src/lib/shopify.ts`) — never hardcode catalog data in components.
+- Collections (Matcha, Teaware, Kits) are derived from each product's Shopify product type; the shop filter uses the `?collection=` search param.
+- "Best sellers" on the home page = products tagged `best-seller` in Shopify.
+- Variant photos are matched by image alt text equal to the option value (e.g. alt "Sage"), see `imageForOptions`.
+- Cart state is a persisted zustand store with `skipHydration`; `useCartSync` rehydrates it after mount to avoid SSR hydration mismatches.
