@@ -305,6 +305,8 @@ export const useCartStore = create<CartStore>()(
     {
       name: "shopify-cart",
       storage: createJSONStorage(() => localStorage),
+      // Rehydrated in useCartSync after mount so SSR and first client render match.
+      skipHydration: true,
       partialize: (state) => ({
         items: state.items,
         cartId: state.cartId,
