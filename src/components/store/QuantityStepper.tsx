@@ -35,8 +35,8 @@ export function QuantityStepper({
           "flex h-full items-center justify-center rounded-l-full text-foreground/70 transition-colors hover:text-primary disabled:opacity-40",
           w,
         )}
-        onClick={() => onChange(Math.max(min - 1, value - 1))}
-        disabled={disabled || value <= min - 1 || (min === 1 && value <= 1)}
+        onClick={() => onChange(Math.max(min, value - 1))}
+        disabled={disabled || value <= min}
       >
         <Minus className="h-3.5 w-3.5" />
       </button>

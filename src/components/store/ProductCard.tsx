@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatMoney, type ShopifyProduct } from "@/lib/shopify";
+import { formatMoney, sizedImage, type ShopifyProduct } from "@/lib/shopify";
 import { useAddToCart } from "@/hooks/useAddToCart";
 
 export function ProductCard({ product, priority = false }: { product: ShopifyProduct; priority?: boolean }) {
@@ -21,7 +21,7 @@ export function ProductCard({ product, priority = false }: { product: ShopifyPro
       >
         {image && (
           <img
-            src={`${image.url}&width=800`}
+            src={sizedImage(image.url, 800)}
             alt={image.altText ?? p.title}
             width={800}
             height={800}

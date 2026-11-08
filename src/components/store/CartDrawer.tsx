@@ -10,7 +10,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { cartTotals, useCartStore } from "@/stores/cartStore";
-import { formatMoney, imageForOptions } from "@/lib/shopify";
+import { formatMoney, imageForOptions, sizedImage } from "@/lib/shopify";
 import { QuantityStepper } from "./QuantityStepper";
 
 export function CartDrawer() {
@@ -59,7 +59,7 @@ export function CartDrawer() {
                     <div className="h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-surface">
                       {img && (
                         <img
-                          src={`${img.url}&width=200`}
+                          src={sizedImage(img.url, 200)}
                           alt=""
                           width={80}
                           height={80}

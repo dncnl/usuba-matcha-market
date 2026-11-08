@@ -146,6 +146,17 @@ export function formatMoney(money: Money | { amount: number; currencyCode: strin
   }
 }
 
+/** Ask Shopify's CDN for a resized image. */
+export function sizedImage(url: string, width: number) {
+  try {
+    const u = new URL(url);
+    u.searchParams.set("width", String(width));
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 /** Pick the product image whose alt text matches a selected option value (e.g. "Sage"). */
 export function imageForOptions(
   product: ShopifyProduct,
