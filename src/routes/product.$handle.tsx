@@ -7,6 +7,8 @@ import { QuantityStepper } from "@/components/store/QuantityStepper";
 import { ProductCard } from "@/components/store/ProductCard";
 import { useAddToCart } from "@/hooks/useAddToCart";
 import {
+  COLLECTIONS,
+  type Collection,
   formatMoney,
   imageForOptions,
   productQueryOptions,
@@ -106,7 +108,7 @@ function ProductPage() {
         <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
           <Link
             to="/shop"
-            search={p.productType ? { collection: p.productType as "Matcha" } : {}}
+            search={(COLLECTIONS as readonly string[]).includes(p.productType) ? { collection: p.productType as Collection } : {}}
             className="inline-flex items-center gap-1 hover:text-primary"
           >
             <ChevronLeft className="h-4 w-4" /> {p.productType || "Shop"}
@@ -211,7 +213,7 @@ function ProductPage() {
           ))}
 
           <div className="mt-9">
-            <p className="text-sm font-medium" id="qty-label">
+            <p className="text-sm font-medium">
               Quantity
             </p>
             <div className="mt-3 flex flex-col gap-3 sm:flex-row">
