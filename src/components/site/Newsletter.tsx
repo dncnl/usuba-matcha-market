@@ -59,10 +59,9 @@ export function Newsletter({ tone = "light" }: { tone?: "light" | "dark" }) {
           aria-invalid={!!error}
           aria-describedby={error ? `newsletter-${tone}-error` : undefined}
           className={cn(
-            "min-w-0 flex-1 bg-transparent text-sm outline-none",
+            "min-w-0 flex-1 bg-transparent text-sm focus-visible:outline-none",
             dark ? "text-primary-foreground placeholder:text-primary-foreground/60" : "placeholder:text-muted-foreground",
           )}
-          style={{ outline: "none" }}
         />
         <Button type="submit" size="sm" variant={dark ? "secondary" : "default"}>
           Subscribe
